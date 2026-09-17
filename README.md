@@ -10,14 +10,10 @@ An automated tool designed for **uBlue Bluefin OS** (and other GNOME environment
 
 ## Installation
 
-Clone the repository : 
 ```bash
 git clone https://github.com/mhasanmuammar/Gnome-Screenshot-JPG.git
 cd Gnome-Screenshot-JPG
-```
-
-Run the local deployment script:
-```bash
+chmod +x Gnome-Screenshot-JPG
 ./install.sh
 ```
 
