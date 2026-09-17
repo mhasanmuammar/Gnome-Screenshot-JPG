@@ -13,7 +13,7 @@ An automated tool designed for **uBlue Bluefin OS** (and other GNOME environment
 ```bash
 git clone https://github.com/mhasanmuammar/Gnome-Screenshot-JPG.git
 cd Gnome-Screenshot-JPG
-chmod +x Gnome-Screenshot-JPG
+chmod +x install.sh
 ./install.sh
 ```
 
