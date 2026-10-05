@@ -40,10 +40,19 @@ for png_path in glob.glob(os.path.join(TARGET_DIR, "*.png")):
                 scale -= 0.10   # Reduce size by 10% more if it's still too large
                 quality -= 5    # Reduce compression quality slightly
 
-        # Only delete the original bloated PNG if the compressed JPG was generated successfully
-        if os.path.exists(jpg_path):
+        # Only delete the original PNG if the compressed JPG was generated
+        # successfully and is within the size limit.
+        if os.path.exists(jpg_path) and os.path.getsize(jpg_path) <= SIZE_THRESHOLD:
             os.remove(png_path)
-            print(f"Successfully optimized: {os.path.basename(jpg_path)} ({os.path.getsize(jpg_path) // 1024} KB)")
+            print(
+                f"Successfully optimized: {os.path.basename(jpg_path)} "
+                f"({os.path.getsize(jpg_path) // 1024} KB)"
+            )
+        else:
+            print(
+                f"JPG remains above size limit; keeping original PNG: "
+                f"{os.path.basename(png_path)}"
+            )
 
     except Exception as e:
         print(f"Error handling {png_path}: {e}")

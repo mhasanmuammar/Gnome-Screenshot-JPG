@@ -27,6 +27,7 @@ EOF
 cat << EOF > "$HOME/.config/systemd/user/gnome-screenshot-jpg.path"
 [Unit]
 Description=Watch Screenshots Folder for New Images
+After=graphical-session.target
 
 [Path]
 PathChanged=%h/Pictures/Screenshots
